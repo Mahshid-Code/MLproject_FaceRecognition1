@@ -8,23 +8,6 @@ Lables=[];
 
 %% Load the data according to your choice
 switch choice_data
-    %--------------------
-%     case 1
-%         display('You chose to try on a small simple sample!')
-%          load('pose.mat');% Size images 48x40 and 3 Images per subject
-%         nSubj=68;
-%         I_perSub=13;
-%         % for i=1:nSubj;for j=1:13,subplot(4,4,j);imshow(uint8(pose(:,:,j,i)));end;pause(1);end
-%         pose_reshaped=reshape(pose,48*40,I_perSub,nSubj);
-%         pose_1=zeros(48*40,nSubj,I_perSub);
-%         for i=1:68;
-%             for j=1:13
-%                 pose_1(:,i,j)=squeeze(pose_reshaped(:,j,i));
-%             end
-%         end
-%         Control_data=pose_1(:,:,[4 9]);
-%         Effect_data=pose_1(:,:,[3 10]);
-%         frontier_image=4;
     case 1
         display('You chose to study the facial expression effect!')
         load('data.mat'); % Size images 24x21 and 3 Images per subject
@@ -114,17 +97,6 @@ for i=1:size(Effect_data,2)
     for j=1:size(Effect_data,3)
     Effect_data(:,i,j)=Effect_data(:,i,j)/max(Effect_data(:,i,j));
 end
-
-%Control_data format:pixels,whichsubject,images
-% if Training_percent==100
-%     trainInd=1:nSubj;testInd=1:nSubj;
-% else
-%     trainInd=randperm(nSubj,fix(nSubj*Training_percent/100)); % randomly choose the subjects for training
-%     A=1:nSubj;
-%     testInd=A(find(ismember(A,trainInd)==0)); %rest should be in the test
-% end
-% TrainingLabels=trainInd;
-% TestLabels=testInd;
 
 end
 
