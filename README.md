@@ -9,3 +9,6 @@ Implement the following classifiers for face recognition.
 Try different scenarios. For example, you can test the effects of expressions, illumination variations,
 etc. You can vary the amount of training data and see how the classification accuracy varies. The list
 can go on as you wish.
+
+
+Please run main.m
