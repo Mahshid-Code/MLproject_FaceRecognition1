@@ -1,7 +1,5 @@
 function Task3=PCA_BAYES_NN(Control_data,Effect_data)
 
-% Mahshid Najafi
-% ENEE633 Project 1
 % PCA followed by Bayes Rule and NN rule
 
 %%
@@ -22,7 +20,6 @@ for i=1:IperSubj
     Training_data=cat(2,Training_data,squeeze(Control_data(:,:,i)));
 end
 
-% Training_data=squeeze(Control_data(:,:,frontier_image));
 
 % Plot samples of average face and eigen faces
 figure,
@@ -41,7 +38,6 @@ numlines=1;
 defaultanswer={'70'};
 nPCA=str2num(cell2mat(inputdlg(prompt,name,numlines,defaultanswer)));
 Training_PCA_matrix=pca(Training_data*Training_data','NumComponents' ,nPCA)';
-% Training_PCA_matrix=pca(A,'NumComponents' ,nPCA)';
 
 figure,
 colormap('Gray')
@@ -85,18 +81,4 @@ for i=1:1:size(Effect_data,3)
     display('Results:')
     display(['Hit Rate is ' num2str(hit_rate_percent) '%'])
 end
-
-% for iTest=1:nSubj
-%     for iTrain=1:nSubj
-%         for iEffect=1:size(Effect_data,3)
-%             Test_data=squeeze(Effect_data(:,iTest,iEffect))-Avg_face;
-%             Test_PCA=Training_PCA_matrix*Test_data;
-%             classification_results_Bayes(iEffect,iTest) = bayesian(Test_PCA, Training_PCA_mu(:,iTrain),squeeze(Training_PCA_cov(:,:,iTrain)));
-%             
-%         end
-%     end
-% end
-
-
-Task3=hit_rate_percent;
 
