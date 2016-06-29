@@ -1,5 +1,5 @@
-% Mahshid Najafi
-% ENEE633 Project 1
+% Mahshid 
+% Machine Learning Project 1
 % Main Function
 %%
 clc
