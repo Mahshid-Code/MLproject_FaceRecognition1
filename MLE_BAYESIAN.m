@@ -1,6 +1,4 @@
 function Task1=MLE_BAYESIAN(Control_data,Effect_data)
-% Author: Mahshid Najafi
-% ENEE633 Project 1
 % ML estimation with Gaussian assumption followed by Bayes rule
 
 %% Make ready the training and test set according to inputs
@@ -40,28 +38,3 @@ classification_results=Lables(max_idx);
 Hit_rate=sum(classification_results==TestLabels)/length(TestLabels);
 display(['Hit rate for MLE on test set is' num2str(Hit_rate*100) '%'])
 Task1=Hit_rate;
-% 
-% 
-% % Find Mean and Covariance of Each Class
-% Control_mu= squeeze(mean(Control_data,3));
-% Control_cov=zeros(nPixel,nPixel,nSubj);
-% for i=1:nSubj
-%     Control_cov(:,:,i) = 1/(size(Control_data,3)-1).*squeeze(Control_data(:,i,:))*squeeze(Control_data(:,i,:))';
-% end
-% 
-% 
-% 
-% 
-% classification_results=[];
-% for i=1:nSubj
-%     X=Effect_data(:,i);
-%     for j=1:nSubj
-%         display(['Testing Subject' num2str(i) ' vs Subject' num2str(j)])
-%         classification_results(i,j)=bayesian(X, Control_mu(:,j), Control_cov(:,:,j));        
-%     end
-% end
-% classify_final=classification_results';
-% % [b,Imax]=max(classify_final);
-% %  tt=[Imax;TestLabels]
-%  
-% %  Control_data=all_data;
