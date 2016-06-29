@@ -1,7 +1,4 @@
 function Task4=LDA_BAYES_NN(Control_data,Effect_data)
-
-% Mahshid Najafi
-% ENEE633 Project 1
 % PCA followed by Bayes Rule and NN rule
 %%
 format long
@@ -21,15 +18,7 @@ for i=1:IperSubj
     Training_data=cat(2,Training_data,squeeze(Control_data(:,:,i)));
 end
 
-% Training_data=squeeze(Control_data(:,:,frontier_image));
-
-% Plot samples of average face and eigen faces
-% figure,
 Avg_face=mean(Training_data,2);
-% colormap('Gray')
-% imagesc(reshape(Avg_face,nROW,[]));
-% title('Average Face')
-% axis off;
 
 %%
 A=Training_data-repmat(Avg_face,1,size(Training_data,2));
@@ -40,7 +29,6 @@ numlines=1;
 defaultanswer={'70'};
 nPCA=str2num(cell2mat(inputdlg(prompt,name,numlines,defaultanswer)));
 Training_PCA_matrix=pca(Training_data*Training_data','NumComponents' ,nPCA)';
-% Training_PCA_matrix=pca(A,'NumComponents' ,nPCA)';
 
 
 
@@ -50,11 +38,8 @@ Training_PCA_Labels=repmat([1:nSubj],1,size(Control_data,3));
 LDA_input = Training_PCA_matrix*A;
 LDA_Matrix=LDA_calc(LDA_input,Training_PCA_Labels);
 Training_PCA_LDA=A'*Training_PCA_matrix'*LDA_Matrix;
-% LDATrain= trainingData*PCAMatrix*LDAMatrix;
-% LDATest = testData*PCAMatrix*LDAMatrix;
 
 classification_results_NN=zeros(nTest,nSubj);
-% classification_results_Bayes=zeros(nTest,nSubj);
 
 for iTest=1:nSubj
     for iEffect=1:size(Effect_data,3)
