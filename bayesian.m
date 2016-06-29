@@ -1,10 +1,4 @@
 function classification = bayesian(X, mu, sigma)
-% %  N=size(X,1);
-% % classification=[];
-% % for i = 1:N
-% %     classification(1,i) =(-1/2)*((X(i,:) - mu)*inv(sigma)*(X(i,:)-mu)')-(1/2)*log(det(sigma));
-% % end
-
 
 
 nROW = size(X,1);
