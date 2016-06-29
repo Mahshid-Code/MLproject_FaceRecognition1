@@ -1,4 +1,4 @@
-# MLproject_FaceRecognition1
+# MLproject_FaceRecognition1 written in MATLAB
 Problem Statement
 Implement the following classifiers for face recognition.
 · ML estimation with Gaussian assumption followed by Bayes rule
