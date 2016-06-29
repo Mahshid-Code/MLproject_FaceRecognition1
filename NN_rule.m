@@ -1,6 +1,4 @@
 function Task2=NN_rule(Control_data,Effect_data,frontier_image)
-% Mahshid Najafi
-% ENEE633 Project 1
 % NN Rule
 %%
 format long
