@@ -1,5 +1,4 @@
 function hit_rate_percent=find_accuracy(TestLabels,OriginalLabels)
-% Author: Mahshid Najafi
 hit_rate=0;
 for i=1:length(TestLabels)
     if TestLabels(i)==OriginalLabels(i)
