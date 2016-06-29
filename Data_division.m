@@ -1,6 +1,5 @@
-% function [Control_data,Effect_data,TrainingLabels,TestLabels,frontier_image]=Data_division(choice_data,Training_percent,condition_amount)
 function [Control_data,Effect_data,frontier_image]=Data_division(choice_data,condition_amount)
-% Author: Mahshid Najafi
+
 
 TrainingData=[];
 TestData=[];
